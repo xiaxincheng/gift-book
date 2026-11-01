@@ -17,7 +17,8 @@
 
 [在线演示](https://jingguanzhang.github.io/gift-book/)
 
-![unnamed](https://github.com/user-attachments/assets/1ebb4003-3dd5-442e-bc65-066ea17958eb)
+![主界面 · 田氏颜体](screenshots/main-yanti.png)
+![副屏展示 · 田氏颜体](screenshots/guest-yanti.png)
 
 
 > **严正声明**
