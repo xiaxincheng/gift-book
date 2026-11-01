@@ -488,9 +488,11 @@
           color: var(--custom-amount-chinese-color, var(--amount-chinese-color)) !important;
           font-family: var(--custom-amount-chinese-font, var(--amount-chinese-font-family)) !important;
           font-size: var(--custom-amount-chinese-size, 30px) !important;
-          writing-mode: vertical-lr;
-          text-orientation: upright;
-          white-space: nowrap; /* 竖排金额不折列，保证六字大写金额完整显示 */
+          writing-mode: horizontal-tb;
+          line-height: 1.15;
+          width: 1.3em; /* 宽度锁一字，强制单字成行=竖排效果，行高完全可控 */
+          margin: 0 auto;
+          overflow: visible;
         }
 
         .amount-numeric {
