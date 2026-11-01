@@ -46,18 +46,18 @@
         /* 默认自定义变量 */
         --name-font-size: var(--custom-name-size, 25px);
         --name-color: var(--custom-name-color, #333);
-        --name-font-family: var(--custom-name-font, "KaiTi", "楷体", serif);
+        --name-font-family: var(--custom-name-font, "方正楷体简体", "FZKai-Z03S", "KaiTi", "楷体", serif);
         --type-font-size: var(--custom-type-size, 22px);
         --type-color: var(--custom-type-color, #c00);
         --type-font-family: var(--custom-type-font, "Source Han Serif CN Heavy", serif);
 
         --amount-chinese-font-size: var(--custom-amount-chinese-size, 25px);
         --amount-chinese-color: var(--custom-amount-chinese-color, #333);
-        --amount-chinese-font-family: var(--custom-amount-chinese-font, "KaiTi", "楷体", serif);
+        --amount-chinese-font-family: var(--custom-amount-chinese-font, "方正楷体简体", "FZKai-Z03S", "KaiTi", "楷体", serif);
 
         --cover-text-font-size: var(--custom-cover-text-size, 30px);
         --cover-text-color: var(--custom-cover-text-color, #f5d4ab);
-        --cover-text-font-family: var(--custom-cover-text-font, "KaiTi", "楷体", serif);
+        --cover-text-font-family: var(--custom-cover-text-font, "方正楷体简体", "FZKai-Z03S", "KaiTi", "楷体", serif);
 
         --page-info-color: var(--custom-page-info-color, var(--primary-color));
         --page-info-font-family: var(--custom-page-info-font, inherit);
@@ -146,7 +146,7 @@
         font-weight: bold;
         font-size: clamp(16px, 1.6vw, 25px);
         letter-spacing: 7px;
-        font-family: "KaiTi", "楷体", serif;
+        font-family: "方正楷体简体", "FZKai-Z03S", "KaiTi", "楷体", serif;
         padding: 10px 0;
         overflow: hidden;
         text-align: center;
@@ -372,7 +372,7 @@
           --print-footer-bottom: 12px;
           --print-theme-color: var(--custom-print-theme-color, #ec403c);
           --print-base-color: var(--custom-print-base-color, #1f2937);
-          --print-base-font: var(--custom-print-base-font, "KaiTi", "楷体", serif);
+          --print-base-font: var(--custom-print-base-font, "方正楷体简体", "FZKai-Z03S", "KaiTi", "楷体", serif);
         }
 
         /* 页面重置 */
@@ -3068,7 +3068,7 @@
           const ruler = document.createElement("div");
           ruler.style.cssText = `
                           position: absolute; top: -9999px; left: -9999px; visibility: hidden;
-                          font-family: "KaiTi", "楷体", serif; font-weight: bold; letter-spacing: 2px;
+                          font-family: "方正楷体简体", "FZKai-Z03S", "KaiTi", "楷体", serif; font-weight: bold; letter-spacing: 2px;
                           word-break: break-word; padding: 8px; line-height: 2em; width: 103.14mm;
                         `;
           document.body.appendChild(ruler);
