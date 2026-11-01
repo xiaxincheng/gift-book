@@ -490,8 +490,7 @@
           font-size: var(--custom-amount-chinese-size, 30px) !important;
           writing-mode: vertical-lr;
           text-orientation: upright;
-          letter-spacing: -0.25em; /* 抵消字体竖排自带的松散字距，锁定每字行进 1.15em */
-          height: calc(var(--custom-amount-chinese-size, 30px) * 7.2); /* 列高六字，超长折第二列 */
+          height: calc(var(--custom-amount-chinese-size, 30px) * 9); /* 列高容纳六字自然字距，超长折第二列 */
           width: max-content;
           margin: 0 auto;
           overflow: visible;
