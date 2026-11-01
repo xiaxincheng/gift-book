@@ -414,7 +414,7 @@
         .print-page {
           page-break-after: always;
           width: 100%;
-          height: 100%;
+          height: var(--print-page-width); /* 横向纸张的物理高度，避免高度链断裂导致行高塌缩 */
           padding: var(--print-padding-top) var(--print-padding-side) 0;
           box-sizing: border-box;
           display: flex;
@@ -487,7 +487,10 @@
         .amount-chinese {
           color: var(--custom-amount-chinese-color, var(--amount-chinese-color)) !important;
           font-family: var(--custom-amount-chinese-font, var(--amount-chinese-font-family)) !important;
-          font-size: var(--custom-amount-chinese-size, 30pt) !important;
+          font-size: var(--custom-amount-chinese-size, 30px) !important;
+          writing-mode: vertical-lr;
+          text-orientation: upright;
+          white-space: nowrap; /* 竖排金额不折列，保证六字大写金额完整显示 */
         }
 
         .amount-numeric {
