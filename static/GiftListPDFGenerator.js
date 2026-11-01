@@ -198,10 +198,10 @@ class GiftRegistryPDF {
         const tableWidth = pageWidth - margin.left - margin.right;
         const tableHeight = pageHeight - margin.top - margin.bottom;
         const colWidth = tableWidth / this.options.itemsPerPage;
-        const giftTitleHeight = tableHeight * 0.15;
+        const giftTitleHeight = tableHeight * 0.12;
         const nameHeight = (tableHeight - giftTitleHeight) / 2;
         const amountContainerHeight = nameHeight;
-        const numericAmountHeight = 25;
+        const numericAmountHeight = 15;
         const chineseAmountHeight = amountContainerHeight - numericAmountHeight;
         const nameStyle = this.styles.name;
         const labelStyle = this.styles.label;
@@ -496,7 +496,13 @@ class GiftRegistryPDF {
         let finalFontSize = initialFontSize;
         let finalCharsPerColForHeight;
 
-        if (neededCols === 1) {
+        // 优先缩小字号放入单列，避免竖排文字拆列换行（如六字大写金额）
+        const singleColFitSize = Math.floor(((cellHeight90 + letterSpacing) / chars.length - letterSpacing) * 2) / 2;
+        if (chars.length > 1 && singleColFitSize >= minFontSize && singleColFitSize < initialFontSize && singleColFitSize <= cellWidth90) {
+            finalColCount = 1;
+            finalFontSize = singleColFitSize;
+            finalCharsPerColForHeight = chars.length;
+        } else if (neededCols === 1) {
             finalColCount = 1;
             finalCharsPerColForHeight = chars.length;
             while (finalFontSize >= minFontSize) {
@@ -536,7 +542,7 @@ class GiftRegistryPDF {
 
         if (finalFontSize < minFontSize) finalFontSize = minFontSize;
 
-        const charsPerColForDrawing = adaptiveMaxCharsPerCol;
+        const charsPerColForDrawing = finalColCount === 1 ? chars.length : adaptiveMaxCharsPerCol;
         const blockHeight = calcHeight(finalCharsPerColForHeight, finalFontSize);
         const blockWidth = calcWidth(finalColCount, finalFontSize);
         const blockLeft = x + (cellWidth - blockWidth) / 2;
