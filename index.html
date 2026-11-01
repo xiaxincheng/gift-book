@@ -44,14 +44,14 @@
         --total-text-color: #ef4444;
 
         /* 默认自定义变量 */
-        --name-font-size: var(--custom-name-size, 25px);
+        --name-font-size: var(--custom-name-size, 40px);
         --name-color: var(--custom-name-color, #333);
         --name-font-family: var(--custom-name-font, "田氏颜体", "TianShiYanTi", "方正楷体简体", "FZKai-Z03S", "KaiTi", "楷体", serif);
         --type-font-size: var(--custom-type-size, 22px);
         --type-color: var(--custom-type-color, #c00);
         --type-font-family: var(--custom-type-font, "Source Han Serif CN Heavy", serif);
 
-        --amount-chinese-font-size: var(--custom-amount-chinese-size, 25px);
+        --amount-chinese-font-size: var(--custom-amount-chinese-size, 40px);
         --amount-chinese-color: var(--custom-amount-chinese-color, #333);
         --amount-chinese-font-family: var(--custom-amount-chinese-font, "田氏颜体", "TianShiYanTi", "方正楷体简体", "FZKai-Z03S", "KaiTi", "楷体", serif);
 
@@ -2242,9 +2242,9 @@
             };
 
             const giftBookStyles = {
-              name: { fontSize: resolve.size(customStyle.name?.size, 25), color: resolve.color(customStyle.name?.color, "#333333") },
+              name: { fontSize: resolve.size(customStyle.name?.size, 40), color: resolve.color(customStyle.name?.color, "#333333") },
               label: { fontSize: resolve.size(customStyle.type?.size, 22), color: resolve.color(customStyle.type?.color, isSolemnTheme ? "#374151" : "#cc0000") },
-              amount: { fontSize: resolve.size(customStyle.amountChinese?.size, 25), color: resolve.color(customStyle.amountChinese?.color, "#333333") },
+              amount: { fontSize: resolve.size(customStyle.amountChinese?.size, 40), color: resolve.color(customStyle.amountChinese?.color, "#333333") },
               coverText: { fontSize: resolve.size(customStyle.coverText?.size, 30), color: resolve.color(customStyle.coverText?.color, "#f5d4ab") },
               pageInfo: {
                 fontSize: 12,
